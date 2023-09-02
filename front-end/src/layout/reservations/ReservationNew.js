@@ -17,7 +17,20 @@ function ReservationNew({ date }) {
     people: "1",
   });
 
-  //submitHandler
+  // Function to handle mobile number input change
+  const handleMobileNumberChange = (event) => {
+    const inputValue = event.target.value;
+
+    // Use a regular expression to filter out non-numeric characters
+    const numericValue = inputValue.replace(/[^0-9]/g, "");
+
+    setReservation({
+      ...reservation,
+      mobile_number: numericValue,
+    });
+  };
+
+  // submitHandler
   const submitHandler = (event) => {
     event.preventDefault();
     createReservation({
@@ -38,6 +51,7 @@ function ReservationNew({ date }) {
         reservation={reservation}
         setReservation={setReservation}
         submitHandler={submitHandler}
+        handleMobileNumberChange={handleMobileNumberChange}
       />
     </main>
   );

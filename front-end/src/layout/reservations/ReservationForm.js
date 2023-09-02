@@ -47,6 +47,7 @@ function ReservationForm({ reservation, setReservation, submitHandler }) {
           <input
             name="mobile_number"
             type="tel"
+            inputMode="numeric" // Add this line to allow only numeric input
             pattern="[0-9\-]+"
             value={reservation.mobile_number}
             onChange={changeHandler}
