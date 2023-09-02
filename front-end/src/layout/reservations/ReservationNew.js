@@ -17,7 +17,7 @@ function ReservationNew({ date }) {
     people: "1",
   });
 
-  // Function to handle mobile number input change
+  // Function to handle mobile number input
   const handleMobileNumberChange = (event) => {
     const inputValue = event.target.value;
 
